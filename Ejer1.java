@@ -3,7 +3,7 @@ import javax.swing.JOptionPane;
 public class Ejer1 {
     public static void main(String[] args) {
         int sueldo;
-        int aumento;
+        double aumento;
         String trabajador;
 
         trabajador = JOptionPane.showInputDialog(null, "Ingresa nombre del trabajador");
@@ -11,11 +11,15 @@ public class Ejer1 {
 
         if (sueldo <= 5000) {
             aumento = sueldo * 0.10;
-            sueldo = +aumento;
-        } else if (sueldo >= 10000) {
+            sueldo += aumento;
+        } else if (sueldo < 9000) {
             aumento = sueldo * 0.50;
-            sueldo = +aumento;
+            sueldo += aumento;
+        }else if(sueldo > 10000){
+            aumento = sueldo * 0.80;
+            sueldo += aumento;
         }
-        System.out.println("Trabajador: ");
+        System.out.println("Trabajador: " + trabajador);
+        System.out.println("Tu sueldo es " + sueldo);
     }
 }
